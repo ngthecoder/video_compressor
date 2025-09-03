@@ -1,6 +1,8 @@
 # Video Compressor Service
 A secure client-server video processing application with encryption capabilities, built with Electron (TypeScript) frontend and Python backend.
 
+<img src="./video_compressor_demo.gif" alt="Demo" width="900" style="border-radius: 8px;"/>
+
 ## Features
 ### Video Processing Operations
 - **Video Compression**: Optimize file size with dynamic quality settings
