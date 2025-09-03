@@ -1,80 +1,80 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>動画変換サービス</title>
+        <title>Video Compressor Service</title>
         <link rel="stylesheet" href="style.css" />
         <script src="renderer.js" defer></script>
     </head>
     <body>
         <div class="container">
             <header>
-                <h1>🎬 動画変換サービス</h1>
-                <p>動画をアップロードして、お好みの形式に変換しましょう</p>
+                <h1>🎬 Video Compressor Service</h1>
+                <p>Upload your videos and convert them to your preferred format</p>
             </header>
 
             <main>
-                <!-- ファイルアップロードセクション -->
+                <!-- File Upload Section -->
                 <section class="upload-section">
-                    <h2>1. 動画をアップロード</h2>
+                    <h2>1. Upload Video</h2>
                     <div class="upload-area" id="uploadArea">
                         <div class="upload-content">
                             <div class="upload-icon">📁</div>
-                            <p>クリックして動画を選択</p>
-                            <p class="file-types">対応形式: MP4</p>
+                            <p>Click to select video file</p>
+                            <p class="file-types">Supported formats: MP4</p>
                         </div>
                     </div>
                     <div id="fileInfo" class="file-info hidden">
-                        <h3>選択されたファイル:</h3>
+                        <h3>Selected file:</h3>
                         <p id="fileName"></p>
                     </div>
                 </section>
 
-                <!-- 操作選択セクション -->
+                <!-- Operation Selection Section -->
                 <section class="operation-section">
-                    <h2>2. 動画操作を選択</h2>
+                    <h2>2. Choose Video Operation</h2>
                     <div class="operation-grid">
                         <div class="operation-card" data-operation="compress">
                             <div class="operation-icon">🗜️</div>
-                            <h3>圧縮</h3>
-                            <p>最適な圧縮でファイルサイズを削減</p>
+                            <h3>Compression</h3>
+                            <p>Reduce file size with optimal compression</p>
                         </div>
                         <div class="operation-card" data-operation="resolution">
                             <div class="operation-icon">📐</div>
-                            <h3>解像度変更</h3>
-                            <p>動画の解像度を変更</p>
+                            <h3>Resolution Change</h3>
+                            <p>Adjust video resolution</p>
                         </div>
                         <div class="operation-card" data-operation="aspect">
                             <div class="operation-icon">📏</div>
-                            <h3>アスペクト比変更</h3>
-                            <p>動画のアスペクト比を変更</p>
+                            <h3>Aspect Ratio Change</h3>
+                            <p>Modify video aspect ratio</p>
                         </div>
                         <div class="operation-card" data-operation="audio">
                             <div class="operation-icon">🎵</div>
-                            <h3>オーディオ変換</h3>
-                            <p>動画を音声ファイルに変換</p>
+                            <h3>Audio Conversion</h3>
+                            <p>Extract audio from video</p>
                         </div>
                         <div class="operation-card" data-operation="gif">
                             <div class="operation-icon">🎞️</div>
-                            <h3>GIF/WEBM変換</h3>
-                            <p>動画をGIFまたはWEBMに変換</p>
+                            <h3>GIF/WEBM Conversion</h3>
+                            <p>Convert video to GIF or WEBM format</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- 設定セクション -->
+                <!-- Settings Section -->
                 <section class="settings-section hidden" id="settingsSection">
-                    <h2>3. 操作設定</h2>
+                    <h2>3. Operation Settings</h2>
                     <div class="settings-content">
-                        <!-- 解像度設定 -->
+                        <!-- Resolution Settings -->
                         <div
                             class="setting-group hidden"
                             id="resolutionSettings"
                         >
-                            <h3>解像度設定</h3>
+                            <h3>Resolution Settings</h3>
                             <div class="input-group">
-                                <label for="resolutionSelect">解像度:</label>
+                                <label for="resolutionSelect">Resolution:</label>
                                 <select id="resolutionSelect">
                                     <option value="480p">480p (854×480)</option>
                                     <option value="720p">
@@ -91,26 +91,26 @@
                             </div>
                         </div>
 
-                        <!-- アスペクト比設定 -->
+                        <!-- Aspect Ratio Settings -->
                         <div class="setting-group hidden" id="aspectSettings">
-                            <h3>アスペクト比設定</h3>
+                            <h3>Aspect Ratio Settings</h3>
                             <div class="input-group">
-                                <label for="aspectRatio">アスペクト比:</label>
+                                <label for="aspectRatio">Aspect ratio:</label>
                                 <select id="aspectRatio">
                                     <option value="16:9">
-                                        16:9 (ワイドスクリーン)
+                                        16:9 (Widescreen)
                                     </option>
-                                    <option value="4:3">4:3 (標準)</option>
+                                    <option value="4:3">4:3 (Standard)</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- GIF/WEBM設定 -->
+                        <!-- GIF/WEBM Settings -->
                         <div class="setting-group hidden" id="gifSettings">
-                            <h3>GIF/WEBM設定</h3>
+                            <h3>GIF/WEBM Settings</h3>
                             <div class="input-group">
                                 <label for="startTime"
-                                    >開始時間 (HH:MM:SS):</label
+                                    >Start time (HH:MM:SS):</label
                                 >
                                 <input
                                     type="text"
@@ -121,7 +121,7 @@
                             </div>
                             <div class="input-group">
                                 <label for="endTime"
-                                    >終了時間 (HH:MM:SS):</label
+                                    >End time (HH:MM:SS):</label
                                 >
                                 <input
                                     type="text"
@@ -131,7 +131,7 @@
                                 />
                             </div>
                             <div class="input-group">
-                                <label for="outputFormat">出力形式:</label>
+                                <label for="outputFormat">Output format:</label>
                                 <select id="outputFormat">
                                     <option value="gif">GIF</option>
                                     <option value="webm">WEBM</option>
@@ -139,46 +139,46 @@
                             </div>
                         </div>
 
-                        <!-- ファイル名設定 -->
+                        <!-- Output Filename Settings -->
                         <div class="setting-group hidden" id="outputSettings">
-                            <h3>出力ファイル名</h3>
+                            <h3>Output Filename</h3>
                             <div class="input-group">
                                 <label for="outputFileName"
-                                    >拡張子を除いたファイル名:</label
+                                    >Filename (without extension):</label
                                 >
                                 <input
                                     type="text"
                                     id="outputFileName"
-                                    placeholder="変換後の動画"
+                                    placeholder="converted_video"
                                 />
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- 実行ボタン -->
+                <!-- Execute Button -->
                 <section class="execute-section">
                     <button id="executeBtn" class="execute-btn" disabled>
-                        🚀 変換を実行
+                        🚀 Start Conversion
                     </button>
                 </section>
 
-                <!-- 進捗表示 -->
+                <!-- Progress Section -->
                 <section class="progress-section hidden" id="progressSection">
-                    <h2>変換中...</h2>
+                    <h2>Converting...</h2>
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill"></div>
                     </div>
-                    <p id="progressText">処理を開始しています...</p>
+                    <p id="progressText">Starting processing...</p>
                 </section>
 
-                <!-- 結果表示 -->
+                <!-- Result Section -->
                 <section class="result-section hidden" id="resultSection">
-                    <h2>✅ 変換完了!</h2>
+                    <h2>✅ Conversion Complete!</h2>
                     <div class="result-content">
                         <p id="resultMessage"></p>
                         <button id="downloadBtn" class="download-btn">
-                            📥 ダウンロード
+                            📥 Download
                         </button>
                     </div>
                 </section>
